@@ -1,0 +1,9 @@
+{
+	"stockList": [
+		{
+			"stockName": "bus",
+			"stockNumber": 5,
+			"stockPrice": 50
+		}
+	]
+}

@@ -1,0 +1,15 @@
+[
+	{
+		"symbol": "nokia",
+		"price": 2.0,
+		"numberOfShares": 65,
+		"value": 200.0
+	},
+	{
+		"symbol": "apple",
+		"price": 22.0,
+		"numberOfShares": 38,
+		"value": 1100.0
+	},
+	"array-->{\"dateTime\":\"19\\/06\\/2018\",\"symbol\":\"nokia\",\"price\":10.0,\"numberOfShares\":5,\"Value\":50.0}"
+]

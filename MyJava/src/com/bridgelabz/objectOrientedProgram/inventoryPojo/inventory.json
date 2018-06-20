@@ -1,0 +1,33 @@
+{
+	"riceList": [
+		{
+			"type": "basmathi",
+			"weight": 5,
+			"price": 120
+		},
+		{
+			"type": "boiled",
+			"weight": 5,
+			"price": 120
+		}
+	],
+	"wheatList": [
+		{
+			"type": "whole",
+			"weight": 5,
+			"price": 80
+		}
+	],
+	"pulsesList": [
+		{
+			"type": "nut",
+			"weight": 5,
+			"price": 210
+		},
+		{
+			"type": "greenpeas",
+			"weight": 6,
+			"price": 120
+		}
+	]
+}

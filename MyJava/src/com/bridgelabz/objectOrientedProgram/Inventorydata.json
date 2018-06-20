@@ -1,0 +1,46 @@
+{
+"Rice":[
+       {
+  	"Type":"Basmathi",
+	"Weight in KG":"10",
+	"Price per KG":"100"
+	},
+	{
+	"Type":"Boiled Rice",
+	"Weight in KG":"20",
+	"Price per KG":"200"
+	},
+	{
+	"Type":"Steamed Rice",
+	"Weight in KG":"5",
+	"Price per KG":"50"
+	}
+	]
+"Wheat":[
+	{
+	"Type":"Spelt",
+	"Weight in KG":"5",
+	"Price per KG":"38"
+	}
+	]
+"pulses":[
+	{
+	"Name":"Green Gram",
+	"Weight in KG":"6",
+	"Price per KG":"65"
+	},
+	{
+	"Name":"Horse Gram",
+	"Weight in KG":"4",
+	"Price per KG":"45"
+	},
+	{
+	"Name":"Green Peas",
+	"Weight in KG":"8",
+	"Price per KG":"50"
+	}
+]
+}
+
+
+

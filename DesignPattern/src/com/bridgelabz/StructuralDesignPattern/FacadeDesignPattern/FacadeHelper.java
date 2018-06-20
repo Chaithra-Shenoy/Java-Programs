@@ -1,0 +1,59 @@
+/**
+ * 
+ */
+package com.bridgelabz.StructuralDesignPattern.FacadeDesignPattern;
+
+import java.sql.Connection;
+
+/**
+ * purpose
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class FacadeHelper {
+	/**
+	 * @param dbType
+	 * @param reportType
+	 * @param tableName
+	 */
+	public static void generateReport(DBTypes dbType, ReportTypes reportType, String tableName) {
+		Connection con = null;
+		switch (dbType) {
+		case MYSQL:
+			con = MySql.getMySqlDbConnection();
+			MySql mySqlHelper = new MySql();
+			switch (reportType) {
+			case HTML:
+				mySqlHelper.generateMySqlHTMLReport(tableName, con);
+				break;
+			case PDF:
+				mySqlHelper.generateMySqlPDFReport(tableName, con);
+				break;
+			}
+			break;
+		case ORACLE:
+			con = OracleHelper.getOracleDbConnection();
+			OracleHelper oracleHelper = new OracleHelper();
+			switch (reportType) {
+			case HTML:
+				oracleHelper.generateOracleHTMLReport(tableName, con);
+				break;
+			case PDF:
+				oracleHelper.generateOraclePDFReport(tableName, con);
+				break;
+			}
+			break;
+		}
+
+	}
+
+	public static enum DBTypes {
+		MYSQL, ORACLE;
+	}
+
+	public static enum ReportTypes {
+		HTML, PDF;
+	}
+}

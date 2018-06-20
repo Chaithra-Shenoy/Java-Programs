@@ -1,0 +1,79 @@
+/**
+ * 
+ */
+package com.bridgelabz.datastructure;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+
+import com.bridgelabz.Utility.Utility;
+
+/**
+ * purpose Read the Text from a file, split it into words and arrange it as
+ * Linked List. Take a user input to search a Word in the List. If the Word is
+ * not found then add it to the list, and if it found then remove the word from
+ * the List. In the end save the list into a file
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class UnOrderedList {
+	public static void main(String[] args) throws IOException {
+		LinkedList list = new LinkedList();
+		int count = 0;
+		String wordnew = null;
+		File f = new File("/home/administrator/Java/MyJava/files/unorderedList");
+		FileReader fr = null;
+		BufferedReader br = null;
+		String word = "";
+		try {
+			fr = new FileReader(f);
+			br = new BufferedReader(fr);
+			word = br.readLine();
+			while (word != null) {
+				String[] str = word.split(",");
+				count++;
+				for (int i = 0; i < str.length; i++) {
+					list.add(str[i]);
+				}
+				break;
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("searching elements in list");
+		list.display();
+		System.out.println(list.size());
+		System.out.println("Enter the word to be searched in list");
+		wordnew = Utility.scanner(wordnew);
+		System.out.println(wordnew);
+		int c = list.search(wordnew);
+		System.out.println(c);
+		if (c < list.size() && c >= 0) {
+			list.remove(c);
+
+			list.display();
+			System.out.println(list.size());
+		} else {
+			list.add(wordnew);
+			list.display();
+			System.out.println(list.size());
+			FileWriter fileWriter = new FileWriter(f);
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			String str1 = word + "," + wordnew;
+			bufferedWriter.write(str1);
+			;
+			bufferedWriter.close();
+			System.out.println("The word is added to the file and list successfully");
+
+		}
+	}
+}

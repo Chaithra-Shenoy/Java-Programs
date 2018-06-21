@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/student")
-public class LoginServlet extends HttpServlet {
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+public class LoginServlet extends HttpServlet
+{
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
+	{
 		String id = req.getParameter("id");
 		int idnew = Integer.parseInt(id);
 		String name = req.getParameter("name");
@@ -26,7 +28,8 @@ public class LoginServlet extends HttpServlet {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String qry = "insert into bridgelabz.capgemini values(?,?,?)";
-		try {
+		try 
+		{
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&&password=admin");
 			pstmt = con.prepareStatement(qry);
@@ -34,23 +37,31 @@ public class LoginServlet extends HttpServlet {
 			pstmt.setString(2, name);
 			pstmt.setString(3, branch);
 			pstmt.executeUpdate();
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (ClassNotFoundException | SQLException e) 
+		{
 			e.printStackTrace();
-		} finally {
-			if (pstmt != null) {
-				try {
+		} 
+		finally 
+		{
+			if (pstmt != null)
+			{
+				try 
+				{
 					pstmt.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+				} 
+				catch (SQLException e) 
+				{
 					e.printStackTrace();
 				}
 			}
-			if (con != null) {
-				try {
+			if (con != null)
+			{
+				try 
+				{
 					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+				} catch (SQLException e) 
+				{
 					e.printStackTrace();
 				}
 			}

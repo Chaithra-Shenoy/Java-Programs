@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body bgcolor="aqua">
+<form action="ln" name="form" method="post" onsubmit="return validation()">
+
+Your Name:
+<input type="text" name="name""><br>
+Password: <input type="password" name="pwd"><br>
+<input type="submit" name="sub" value="Submit">
+
+</form>
+</body>
+<script type="text/javascript">
+function validation()
+{
+var a = document.form.name.value;
+if(a=="")
+{
+alert("Please Enter Your Name");
+document.form.name.focus();
+return false;
+}
+}
+</script>
+</html>

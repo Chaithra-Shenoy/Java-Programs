@@ -8,60 +8,64 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class RollBackExample {
-	public static void main(String args[]){  
-		try{  
-		  
-		Class.forName("com.mysql.jdbc.Driver");  
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");  
-		con.setAutoCommit(false);  
-		  
-		PreparedStatement ps=con.prepareStatement("insert into bridgelabz.batch values(?,?,?)");  
-		  
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));  
-		while(true){  
-		  
-		System.out.println("enter id");  
-		String s1=br.readLine();  
-		int id=Integer.parseInt(s1);  
-		  
-		System.out.println("enter name");  
-		String name=br.readLine();  
-		  
-		System.out.println("enter barnch");  
-		String branch=br.readLine();  
-		 
-		  
-		ps.setInt(1,id);  
-		ps.setString(2,name);  
-		ps.setString(3,branch);  
-		ps.executeUpdate();  
-		 Savepoint point=con.setSavepoint("point");
-			
-			
-		System.out.println("commit/rollback");  
-		String answer=br.readLine();  
-		if(answer.equals("commit")){  
-		con.commit();  
-		}  
-		if(answer.equals("rollback")){  
-		con.rollback(point);
-		}  
-		  
-		  
-		System.out.println("Want to add more records y/n");  
-		String ans=br.readLine();  
-		if(ans.equals("n")){  
-		break;  
-		}  
-		  
-		}  
-		con.commit();  
-		System.out.println("record successfully saved");  
+	public static void main(String args[]) {
+		Connection con = null;
+		Savepoint point = null;
+		PreparedStatement pstmt = null;
+		
 
-		con.close();//before closing connection commit() is called  
-		}catch(Exception e){System.out.println(e);}  
-		  
+		String query = "insert into bridgelabz.newbatch values(?,?,?)";
+		String query1 = "insert into bridgelabz.newbatch values(?,?,?)";
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("Enter the id");
+//		String id1 = scanner.next();
+//
+//		System.out.println("Enter the name");
+//		String name = scanner.next();
+//		System.out.println("Enter the branch");
+//		String branch = scanner.next();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
+			con.setAutoCommit(false);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, "1257");
+			pstmt.setString(2, "aru");
+			pstmt.setString(3, "sssss");
+			pstmt.executeUpdate();
+			con.commit();
+			
+			pstmt = con.prepareStatement(query1);
+			pstmt.setString(1, "1258");
+			pstmt.setString(2,"bhav");
+			pstmt.setString(3, "nnnnn");
+			pstmt.executeUpdate();
+			
+			point = con.setSavepoint();
+			
+			pstmt = con.prepareStatement(query1);
+			pstmt.setString(1, "1259");
+			pstmt.setString(2,"bhavna");
+			pstmt.setString(3, "nnnnn");
+			pstmt.executeUpdate();
+	
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
 		}
+
+		try {
+
+			con.rollback(point);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 }

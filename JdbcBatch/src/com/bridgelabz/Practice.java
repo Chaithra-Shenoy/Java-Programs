@@ -8,11 +8,20 @@ import java.sql.Savepoint;
 import java.text.ParseException;
 
 
-public class Practice {
+/**
+ * purpose Code to understand transaction in database.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class Practice 
+{
 	private static final String INSERT = "INSERT INTO employee "
 	         + "(empid, name) VALUES (?,?)";
 
-	   public static void main(String[] args) {
+	   public static void main(String[] args) 
+	   {
 	      String jdbcUrl = "jdbc:mysql://localhost:3306/bridgelabz";
 	      String username = "root";
 	      String password = "admin";
@@ -21,7 +30,8 @@ public class Practice {
 	         // Disable auto commit mode
 	         conn.setAutoCommit(false);
 
-	         try (PreparedStatement insertStmt = conn.prepareStatement(INSERT);) {
+	         try (PreparedStatement insertStmt = conn.prepareStatement(INSERT);) 
+	         {
 
 	            // Insert 1st record
 	            insertStmt.setInt(1, 60);
@@ -58,19 +68,27 @@ public class Practice {
 	            conn.commit();
 
 	            System.out.println("Transaction is commited successfully.");
-	         } catch (SQLException e) {
+	         } 
+	         catch (SQLException e)
+	         {
 	            e.printStackTrace();
-	            if (conn != null) {
-	               try {
+	            if (conn != null)
+	            {
+	               try 
+	               {
 	                  // Roll back transaction
 	                  System.out.println("Transaction is being rolled back.");
 	                  conn.rollback();
-	               } catch (Exception ex) {
+	               } 
+	               catch (Exception ex) 
+	               {
 	                  ex.printStackTrace();
 	               }
 	            }
 	         }
-	      } catch (SQLException e) {
+	      }
+	      catch (SQLException e)
+	      {
 	         e.printStackTrace();
 	      }
 	   }

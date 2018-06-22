@@ -9,9 +9,17 @@ import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Statement;
 import java.util.Scanner;
-
-public class RollBackExample {
-	public static void main(String args[]) {
+/**
+ * purpose Code to understand transaction in database.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class RollBackExample 
+{
+	public static void main(String args[]) 
+	{
 		Connection con = null;
 		Savepoint point = null;
 		PreparedStatement pstmt = null;
@@ -19,16 +27,8 @@ public class RollBackExample {
 
 		String query = "insert into bridgelabz.newbatch values(?,?,?)";
 		String query1 = "insert into bridgelabz.newbatch values(?,?,?)";
-//		Scanner scanner = new Scanner(System.in);
-//		System.out.println("Enter the id");
-//		String id1 = scanner.next();
-//
-//		System.out.println("Enter the name");
-//		String name = scanner.next();
-//		System.out.println("Enter the branch");
-//		String branch = scanner.next();
-
-		try {
+		try 
+		{
 			Class.forName("com.mysql.jdbc.Driver");
 
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
@@ -52,18 +52,20 @@ public class RollBackExample {
 			pstmt.setString(1, "1259");
 			pstmt.setString(2,"bhavna");
 			pstmt.setString(3, "nnnnn");
-			pstmt.executeUpdate();
+			pstmt.executeUpdate(); Update data in database using batch processing.
 	
-		} catch (ClassNotFoundException | SQLException e) {
+		} 
+		catch (ClassNotFoundException | SQLException e)
+		{
 			e.printStackTrace();
 		}
-
-		try {
-
+		try
+		{
 			con.rollback(point);
 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		}
+		catch (SQLException e) 
+		{
 			e.printStackTrace();
 		}
 

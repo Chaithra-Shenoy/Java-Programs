@@ -4,13 +4,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-public class UpdateUsingPstmt {
-	public static void main(String[] args) {
+/**
+ * purpose Code to update data in database using PreparedStatement and batch processing.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class UpdateUsingPstmt
+{
+	public static void main(String[] args)
+	{
 		Connection con = null;
 		PreparedStatement ps = null;
 		String qry = "update bridgelabz.batch  set name=? where id=?";
-		try {
+		try 
+		{
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
 			con.setAutoCommit(false);
@@ -26,14 +35,22 @@ public class UpdateUsingPstmt {
             int count[] = ps.executeBatch();
 
 			con.commit();
-		} catch (ClassNotFoundException | SQLException e) {
+		} 
+		catch (ClassNotFoundException | SQLException e) 
+		{
 			e.printStackTrace();
-		} finally {
-			if (ps != null && con != null) {
-				try {
+		}
+		finally 
+		{
+			if (ps != null && con != null) 
+			{
+				try 
+				{
 					ps.close();
 					con.close();
-				} catch (SQLException e) {
+				}
+				catch (SQLException e)
+				{
 					e.printStackTrace();
 				}
 

@@ -9,12 +9,22 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InsertUsingPreparestmt {
-	public static void main(String[] args) {
+/**
+ * purpose insert data in database using batch processing and PreparedStatement.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class InsertUsingPreparestmt 
+{
+	public static void main(String[] args) 
+	{
 		Connection con = null;
 		PreparedStatement ps = null;
 		String qry = "insert into  bridgelabz.batch  values(?,?,?)";
-		try {
+		try 
+		{
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
 			con.setAutoCommit(false);
@@ -31,14 +41,29 @@ public class InsertUsingPreparestmt {
 			int[] count = ps.executeBatch();
 
 			con.commit();
-		} catch (ClassNotFoundException | SQLException e) {
+		} 
+		/**
+		 * purpose Update data in database using batch processing.
+		 * 
+		 * @author Chaithra-Shenoy
+		 * @version 1.0
+		 * @since 17-05-2018
+		 */
+		catch (ClassNotFoundException | SQLException e) 
+		{
 			e.printStackTrace();
-		} finally {
-			if (ps != null && con != null) {
-				try {
+		} 
+		finally 
+		{
+			if (ps != null && con != null) 
+			{
+				try 
+				{
 					ps.close();
 					con.close();
-				} catch (SQLException e) {
+				}
+				catch (SQLException e)
+				{
 					e.printStackTrace();
 				}
 

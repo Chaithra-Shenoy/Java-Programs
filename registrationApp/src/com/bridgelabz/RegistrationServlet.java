@@ -13,6 +13,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+/**
+ * purpose Registration form.
+ * 
+ * @author Chaithra-Shenoy
+ * @date 21-06-2018
+ * @project_name : registrationApp
+ * 
+ */
 @WebServlet("/action")
 public class RegistrationServlet extends HttpServlet {
 	@Override
@@ -26,22 +35,19 @@ public class RegistrationServlet extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
 			String query = "select * from bridgelabz.studentData sd,bridgelabz.studentregister sr where sd.regno=sr.regno and sd.regno=? and sr.password=?";
-			 pstmt=con.prepareStatement(query);
-	            pstmt.setInt(1, Integer.parseInt(regno));
-	            pstmt.setString(2, password);
-	            rs=pstmt.executeQuery();
-	            resp.setContentType("text/html");
-	            PrintWriter out=resp.getWriter();
-	            if(rs.next())
-	            {
-	                out.print("<h1>valid to enter</h1>");
-	                out.println("<html><body bgcolor='orange'> WELCOME <a href=\"valid.html\"> NEXT </a></body></html>");
-	            }
-	            else
-	            {
-	                out.print("<h1>Invalid.You cannot enter </h1>");
-	            }
-	        
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, Integer.parseInt(regno));
+			pstmt.setString(2, password);
+			rs = pstmt.executeQuery();
+			resp.setContentType("text/html");
+			PrintWriter out = resp.getWriter();
+			if (rs.next()) {
+				out.print("<h1>valid to enter</h1>");
+				out.println("<html><body bgcolor='orange'> WELCOME <a href=\"valid.html\"> NEXT </a></body></html>");
+			} else {
+				out.print("<h1>Invalid.You cannot enter </h1>");
+			}
+
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

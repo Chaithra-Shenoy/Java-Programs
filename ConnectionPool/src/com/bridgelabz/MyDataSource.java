@@ -7,7 +7,13 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-
+/**
+ * purpose DataSourse class.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
 public class MyDataSource {
 	public static DataSource getMyDataSource() {
 		Properties property = new Properties();

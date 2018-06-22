@@ -5,7 +5,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.sql.DataSource;
-
+/**
+ * purpose  Insert query using Connection pool.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
 public class ConnectionPool {
 	public static void main(String[] args) {
 		DataSource datasSourse = null;

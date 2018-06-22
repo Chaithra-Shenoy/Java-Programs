@@ -7,6 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * purpose Login validation program using Servlet.
+ * 
+ * @author Chaithra-Shenoy
+ * @date 20-06-2018
+ * @project_name MyServlet
+ * 
+ */
 public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) {
 		String name = req.getParameter("name");
@@ -18,7 +26,6 @@ public class LoginServlet extends HttpServlet {
 			out.flush();
 			out.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -4,13 +4,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-public class InsertPreparedStatement {
-	public static void main(String[] args) {
+/**
+ * purpose Code to insert data in database using PreparedStatement.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
+public class InsertPreparedStatement 
+{
+	public static void main(String[] args) 
+	{
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String qry = "insert into bridgelabz.prepare values(?,?,?)";
-		try {
+		try 
+		{
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
 			pstmt = con.prepareStatement(qry);
@@ -33,14 +42,22 @@ public class InsertPreparedStatement {
 			pstmt.setString(2, "sam");
 			pstmt.setString(3, "me");
 			pstmt.executeUpdate();
-		} catch (ClassNotFoundException | SQLException e) {
+		}
+		catch (ClassNotFoundException | SQLException e) 
+		{
 			e.printStackTrace();
-		} finally {
-			if ((pstmt != null) && (con != null)) {
-				try {
+		}
+		finally 
+		{
+			if ((pstmt != null) && (con != null))
+			{
+				try 
+				{
 					pstmt.close();
 					con.close();
-				} catch (SQLException e) {
+				}
+				catch (SQLException e) 
+				{
 					e.printStackTrace();
 				}
 			}

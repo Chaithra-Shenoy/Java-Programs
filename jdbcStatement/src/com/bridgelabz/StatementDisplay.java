@@ -5,7 +5,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * purpose Code to display data in database using Statement interface.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
 public class StatementDisplay {
 	public static void main(String[] args) {
 		Connection con = null;

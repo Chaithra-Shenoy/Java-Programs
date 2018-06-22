@@ -4,7 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * purpose Code to update data in database using Statement interface.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
 public class StatementUpdate {
 	public static void main(String[] args) {
 		Connection con = null;
@@ -27,6 +33,5 @@ public class StatementUpdate {
 				}
 			}
 		}
-
 	}
 }

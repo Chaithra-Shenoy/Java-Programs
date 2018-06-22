@@ -4,7 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * purpose Code to delete data in database using Statement interface.
+ * 
+ * @author Chaithra-Shenoy
+ * @version 1.0
+ * @since 17-05-2018
+ */
 public class StatementDelete {
 	public static void main(String[] args) {
 		Connection con = null;
@@ -16,7 +22,6 @@ public class StatementDelete {
 			stmt = con.createStatement();
 			stmt.executeUpdate(qry);
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if ((stmt != null) && (con != null)) {
@@ -24,7 +29,6 @@ public class StatementDelete {
 					stmt.close();
 					con.close();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

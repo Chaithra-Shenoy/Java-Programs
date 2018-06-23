@@ -18,8 +18,10 @@ import java.lang.reflect.Modifier;
  * 
  */
 public class TestReflection {
+	@SuppressWarnings("unused")
 	private static Field[] privateIntId;
 
+	@SuppressWarnings({ "rawtypes", "unused", "unchecked" })
 	public static void main(String[] args) {
 		Class reflectClass = ReflectionImpl.class;
 		// to print Fully Qualified Class Name

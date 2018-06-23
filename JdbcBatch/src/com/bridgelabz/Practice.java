@@ -25,6 +25,7 @@ public class Practice
 	      String jdbcUrl = "jdbc:mysql://localhost:3306/bridgelabz";
 	      String username = "root";
 	      String password = "admin";
+	      Savepoint savepoint = null;
 	      try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password);) {
 
 	         // Disable auto commit mode
@@ -34,35 +35,35 @@ public class Practice
 	         {
 
 	            // Insert 1st record
-	            insertStmt.setInt(1, 60);
+	            insertStmt.setInt(1, 617);
 	            insertStmt.setString(2, "chaithra");
 	            insertStmt.executeUpdate();
 
 	            // Insert 2st record
-	            insertStmt.setInt(1, 70);
+	            insertStmt.setInt(1, 717);
 	            insertStmt.setString(2, "aruna");
 	            insertStmt.executeUpdate();
 
 	            // Insert 3st record
-	            insertStmt.setInt(1, 80);
+	            insertStmt.setInt(1, 817);
 	            insertStmt.setString(2, "priya");
 	            insertStmt.executeUpdate();
 
 	            // Create Savepoint
-	            Savepoint savepoint = conn.setSavepoint();
+	             savepoint = conn.setSavepoint();
+	             conn.commit();
 
 	            // Insert 4st record
-	            insertStmt.setInt(1, 40);
-	            insertStmt.setString(2, "divya");
+	            insertStmt.setInt(1, 417);
+	            insertStmt.setString(3, "divya");
 	            insertStmt.executeUpdate();
 
 	            // Insert 5st record
-	            insertStmt.setInt(1, 50);
+	            insertStmt.setInt(1, 517);
 	            insertStmt.setString(2, "bhavya");
 	            insertStmt.executeUpdate();
 
-	            // Rollback to savepoint
-	            conn.rollback(savepoint);
+	          
 
 	            // Commit statement
 	            conn.commit();
@@ -78,7 +79,7 @@ public class Practice
 	               {
 	                  // Roll back transaction
 	                  System.out.println("Transaction is being rolled back.");
-	                  conn.rollback();
+	                  conn.rollback(savepoint);
 	               } 
 	               catch (Exception ex) 
 	               {

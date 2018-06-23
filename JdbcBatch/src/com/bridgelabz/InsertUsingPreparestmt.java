@@ -42,31 +42,33 @@ public class InsertUsingPreparestmt
 
 			con.commit();
 		} 
-		/**
-		 * purpose Update data in database using batch processing.
-		 * 
-		 * @author Chaithra-Shenoy
-		 * @version 1.0
-		 * @since 17-05-2018
-		 */
 		catch (ClassNotFoundException | SQLException e) 
 		{
 			e.printStackTrace();
 		} 
 		finally 
 		{
-			if (ps != null && con != null) 
+			if (ps != null) 
 			{
 				try 
 				{
 					ps.close();
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			if(con!=null)
+			{
+				try 
+				{
 					con.close();
 				}
 				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
-
 			}
 		}
 	}

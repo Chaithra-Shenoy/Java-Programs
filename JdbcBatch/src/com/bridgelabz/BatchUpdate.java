@@ -37,18 +37,26 @@ public class BatchUpdate
 		} 
 		finally
 		{
-			if (stmt != null && con != null) 
+			if (stmt != null) 
 			{
 				try 
 				{
 					stmt.close();
-					con.close();
 				}
 				catch (SQLException e) 
 				{
 					e.printStackTrace();
 				}
-
+			}
+			if(con!=null)
+			{
+				try
+				{
+					con.close();
+				} catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
 			}
 		}
 	}

@@ -36,18 +36,27 @@ public class BatchInsert
 		} 
 		finally
 		{
-			if (stmt != null && con != null) 
+			if (stmt != null) 
 			{
 				try 
 				{
 					stmt.close();
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			if(con!=null) 
+			{
+				try 
+				{
 					con.close();
 				}
 				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
-
 			}
 		}
 	}

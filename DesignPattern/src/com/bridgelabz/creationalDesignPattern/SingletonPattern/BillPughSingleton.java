@@ -23,6 +23,7 @@ public class BillPughSingleton {
 		return SingletonHelper.INSTANCE;
 	}
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		BillPughSingleton obj1 = new BillPughSingleton();
 		obj1.getInstance();

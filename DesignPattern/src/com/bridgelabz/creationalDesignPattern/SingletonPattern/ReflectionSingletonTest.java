@@ -14,10 +14,12 @@ import java.lang.reflect.InvocationTargetException;
  * @since 17-05-2018
  */
 public class ReflectionSingletonTest {
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		EagerSingleton instanceOne = EagerSingleton.getInstance();
 		EagerSingleton instanceTwo = null;
 
+		
 		Constructor[] constructor = EagerSingleton.class.getDeclaredConstructors();
 		for (Constructor constructor2 : constructor) {
 			constructor2.setAccessible(true);

@@ -25,6 +25,7 @@ public class LazySingleton {
 		return instance;
 	}
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		LazySingleton obj1 = new LazySingleton();
 		obj1.getInstance();

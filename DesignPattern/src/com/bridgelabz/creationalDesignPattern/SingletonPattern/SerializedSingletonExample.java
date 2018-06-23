@@ -20,6 +20,7 @@ import java.io.ObjectOutputStream;
  * @since 17-05-2018
  */
 public class SerializedSingletonExample {
+	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		SerializedSingleton instanceOne = (SerializedSingleton) SerializedSingletonExample.readResolve();
 		ObjectOutput out = new ObjectOutputStream(

@@ -32,6 +32,7 @@ public class StaticBlockSingleton {
 		return instance;
 	}
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		StaticBlockSingleton reference1 = new StaticBlockSingleton();
 		reference1.getInstance();

@@ -3,8 +3,6 @@
  */
 package com.bridgelabz.StructuralDesignPattern.ProxyDesignPattern;
 
-import java.io.IOException;
-
 /**
  * purpose
  * @author Chaithra-Shenoy

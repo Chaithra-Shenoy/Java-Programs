@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @version 1.0
  * @since 17-05-2018
  */
+@SuppressWarnings("serial")
 public class SerializedSingleton implements Serializable {
 	private static final long serialUID = -7604766930445L;
 
@@ -30,6 +31,7 @@ public class SerializedSingleton implements Serializable {
 		return SingletonHelper.instance;
 	}
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		SerializedSingleton one = new SerializedSingleton();
 		one.getInstance();

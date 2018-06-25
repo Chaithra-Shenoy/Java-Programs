@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import com.bridgelabz.datastructure.LinkedList;
-import com.bridgelabz.datastructure.QueueUsingLinkedlist;
+import com.bridgelabz.QueueProgram.QueueUsingLinkedlist;
+
 
 /*********************************************************************************************************
  * purpose: All Program Methods

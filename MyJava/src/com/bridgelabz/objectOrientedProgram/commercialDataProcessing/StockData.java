@@ -25,9 +25,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.bridgelabz.datastructure.QueueUsingLinkedlist;
-import com.bridgelabz.datastructure.StackUsingLinkedlist;
-import com.bridgelabz.objectOrientedProgram.addressBookApp.Person;
+import com.bridgelabz.QueueProgram.QueueUsingLinkedlist;
+import com.bridgelabz.QueueProgram.StackUsingLinkedlist;
 
 /**
  * purpose

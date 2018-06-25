@@ -10,9 +10,8 @@ import java.util.List;
 
 import javax.naming.ldap.SortControl;
 
+import com.bridgelabz.QueueProgram.QueueUsingLinkedlist;
 import com.bridgelabz.Utility.Utility;
-import com.bridgelabz.datastructure.LinkedList;
-import com.bridgelabz.datastructure.QueueUsingLinkedlist;
 
 /**
  * purpose create a Player Object having Deck of Cards, and having ability to

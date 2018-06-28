@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<bean id="emp" class="com.bridgelabz.constructor.Employee">
+<constructor-arg name="id" value="65114"></constructor-arg>
+<constructor-arg name="name" value="Chaithra"></constructor-arg>
+<!-- <constructor-arg name="pan" ref="pan"></constructor-arg> -->
+</bean>
+
+<bean id="pan" class="com.bridgelabz.constructor.Pancard">
+<property name="panName" value="Chaithra"></property>
+<property name="number" value="4599253"></property>
+</bean>
+
+</beans>

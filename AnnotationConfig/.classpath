@@ -6,9 +6,11 @@
 	<classpathentry kind="lib" path="lib/com.springsource.org.apache.log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/jmxtools-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="lib/org.springframework.beans-3.0.1.RELEASE-A.jar" sourcepath="lib/org.springframework.beans-3.0.2.release.jar"/>
 	<classpathentry kind="lib" path="lib/org.springframework.context-3.0.1.RELEASE-A.jar"/>
 	<classpathentry kind="lib" path="lib/org.springframework.core-3.0.1.RELEASE-A.jar"/>
 	<classpathentry kind="lib" path="lib/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="lib/org.springframework.beans-3.0.2.release.jar"/>
+	<classpathentry kind="lib" path="lib/spring-beans-4.3.7.RELEASE.jar" sourcepath="lib/spring-beans-4.3.7.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -9,7 +9,7 @@
 <body>
 <form action="LoginPage" method="post">
 <center><h4>LOGIN PAGE</h4></center><br><br>
-<pre>         Email:<input type="text" name="email" /><br>
+<pre>         Email:<input type="text" name="email"  /><br>
       Password:<input type="password" name="pass" /><br>
       <input type="submit" value="LOGIN" /><br><br></pre>
 </form>

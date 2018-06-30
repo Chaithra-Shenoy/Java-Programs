@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * 
@@ -51,7 +52,10 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 
 		int i = ps.executeUpdate();
 		if (i > 0) {
-			resp.sendRedirect("PreSuccess");	
+			HttpSession session=req.getSession(true);
+			session.setAttribute("passEmail", email);
+			RequestDispatcher dis=req.getRequestDispatcher("PreSuccess");
+			dis.forward(req, resp);	
 			}
 	} catch (Exception e2) {
 		System.out.println(e2);

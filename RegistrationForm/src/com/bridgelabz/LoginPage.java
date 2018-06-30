@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * purpose
@@ -51,11 +52,18 @@ public class LoginPage extends HttpServlet {
 			ps.setString(2, password);
 			rs = ps.executeQuery();
 			if (rs.next()) {
-				resp.sendRedirect("PreSuccess");
+				HttpSession session=req.getSession(true);
+				session.setMaxInactiveInterval(7*24*60*60);
+				session.setAttribute("passEmail", email);
+				RequestDispatcher dis=req.getRequestDispatcher("PreSuccess");
+				dis.forward(req, resp);
 
 			} else {
-//				out.println("Username or Password incorrect");
-				out.println("<html><body><h1>Invalid Email Or Password</h1><a href='index.jsp'>BACK</a></body></html>");
+				HttpSession session=req.getSession(true);
+				session.setAttribute("passEmail", email);
+				RequestDispatcher dis=req.getRequestDispatcher("PreError");
+				dis.forward(req, resp);
+				
 
 			}
 

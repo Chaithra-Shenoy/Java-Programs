@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>REGISTERATION PAGE</title>
 </head>
 <body>
 <center><h3>REGISTERATION PAGE</h3></center>

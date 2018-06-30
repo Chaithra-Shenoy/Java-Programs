@@ -5,6 +5,7 @@
    
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet-mapping>
   <servlet-name>PreLogin</servlet-name>
   <url-pattern>/PreLogin</url-pattern>
@@ -50,5 +51,22 @@
   <servlet-class>com.bridgelabz.PreSuccess</servlet-class>
   </servlet>
   
+  <servlet-mapping>
+  <servlet-name>Logout</servlet-name>
+  <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Logout</servlet-name>
+  <servlet-class>com.bridgelabz.Logout</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>PreError</servlet-name>
+  <url-pattern>/PreError</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>PreError</servlet-name>
+  <servlet-class>com.bridgelabz.PreError</servlet-class>
+  </servlet>
   
 </web-app>

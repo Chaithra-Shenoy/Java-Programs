@@ -8,11 +8,9 @@
 </head>
 <body>
 <form action="Logout" method="post">
-<h1>
+<h1>OOPS !! ERROR OCCURED</h1>
 <%String email=(String)request.getSession().getAttribute("passEmail");
-out.print(email);%></h1><br>
-<h1>WELCOME TO THE JAVA WORLD!!!!!</h1>
+out.print("Sorry !!"+email+" Please Register");%></h1><br>
 <input type="submit" value="Logout">
-</form>
 </body>
 </html>

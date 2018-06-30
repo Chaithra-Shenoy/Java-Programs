@@ -18,13 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  *@project_name
  * 
  */
-public class PreSuccess extends HttpServlet {
-	/* (non-Javadoc)
-	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
-	@Override
+public class PreError extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	RequestDispatcher dis=req.getRequestDispatcher("Success.jsp");
-	dis.forward(req, resp);
+		
+		RequestDispatcher dis=req.getRequestDispatcher("Error.jsp");
+		dis.forward(req, resp);
 }
 }

@@ -30,8 +30,8 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	{
 		session.invalidate();
 	}
-	RequestDispatcher dispatch=req.getRequestDispatcher("index.jsp");
-	dispatch.forward(req, resp);
+	RequestDispatcher dis=req.getRequestDispatcher("index.jsp");
+	dis.forward(req, resp);
 
 }
 }

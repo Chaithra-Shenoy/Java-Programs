@@ -8,10 +8,10 @@
 </head>
 <body>
 <form action="Logout" method="post">
-<h1>
+<h4>
 <%String email=(String)request.getSession().getAttribute("passEmail");
-out.print(email);%></h1><br>
-<h1>WELCOME TO THE JAVA WORLD!!!!!</h1>
+out.print(email);%></h4><br>
+<h2>WELCOME TO THE JAVA WORLD!!!!!</h2>
 <input type="submit" value="Logout">
 </form>
 </body>

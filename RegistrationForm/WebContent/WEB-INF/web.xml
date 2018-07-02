@@ -2,71 +2,87 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>RegistrationForm</display-name>
   <welcome-file-list>
-   
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet-mapping>
-  <servlet-name>PreLogin</servlet-name>
-  <url-pattern>/PreLogin</url-pattern>
+    <servlet-name>PreLogin</servlet-name>
+    <url-pattern>/PreLogin</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>PreLogin</servlet-name>
-  <servlet-class>com.bridgelabz.PreLogin</servlet-class>
+    <servlet-name>PreLogin</servlet-name>
+    <servlet-class>com.bridgelabz.PreLogin</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>LoginPage</servlet-name>
-  <url-pattern>/LoginPage</url-pattern>
+    <servlet-name>PreRegister</servlet-name>
+    <url-pattern>/PreRegister</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>LoginPage</servlet-name>
-  <servlet-class>com.bridgelabz.LoginPage</servlet-class>
+    <servlet-name>PreRegister</servlet-name>
+    <servlet-class>com.bridgelabz.PreRegister</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>PreRegister</servlet-name>
-  <url-pattern>/PreRegister</url-pattern>
+    <servlet-name>LoginPage</servlet-name>
+    <url-pattern>/LoginPage</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>PreRegister</servlet-name>
-  <servlet-class>com.bridgelabz.PreRegister</servlet-class>
+    <servlet-name>LoginPage</servlet-name>
+    <servlet-class>com.bridgelabz.LoginPage</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>Register</servlet-name>
-  <url-pattern>/Register</url-pattern>
+    <servlet-name>PreSuccess</servlet-name>
+    <url-pattern>/PreSuccess</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>Register</servlet-name>
-  <servlet-class>com.bridgelabz.Register</servlet-class>
+    <servlet-name>PreSuccess</servlet-name>
+    <servlet-class>com.bridgelabz.PreSuccess</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>PreSuccess</servlet-name>
-  <url-pattern>/PreSuccess</url-pattern>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>PreSuccess</servlet-name>
-  <servlet-class>com.bridgelabz.PreSuccess</servlet-class>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.bridgelabz.Register</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>Logout</servlet-name>
-  <url-pattern>/Logout</url-pattern>
+    <servlet-name>PreError</servlet-name>
+    <url-pattern>/PreError</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>Logout</servlet-name>
-  <servlet-class>com.bridgelabz.Logout</servlet-class>
+    <servlet-name>PreError</servlet-name>
+    <servlet-class>com.bridgelabz.PreError</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>PreError</servlet-name>
-  <url-pattern>/PreError</url-pattern>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>PreError</servlet-name>
-  <servlet-class>com.bridgelabz.PreError</servlet-class>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.bridgelabz.Logout</servlet-class>
   </servlet>
-  
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/LoginPage</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>com.bridgelabz.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RegFilter</filter-name>
+    <url-pattern>/Register</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>RegFilter</filter-name>
+    <filter-class>com.bridgelabz.RegFilter</filter-class>
+  </filter>
+  <!-- <listener>
+    <listener-class>com.bridgelabz.MyListerner</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.bridgelabz.Listener_Context</listener-class>
+  </listener> -->
+  <listener>
+    <listener-class>com.bridgelabz.SessionListener</listener-class>
+  </listener>
 </web-app>

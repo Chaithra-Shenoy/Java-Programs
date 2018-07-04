@@ -6,10 +6,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Index</title>
 </head>
+<style>
+body  {
+    background-color:lightblue;
+    border: solid;
+    margin: 5em;
+}
+</style>
 <body>
-<center><h3>WELCOME</h3></center><br><br>
+<center><h3>WELCOME</h3><br><br>
  <form action="PreLogin" method="post"> <input type="submit" value="LOGIN"></form>
   <form action="PreRegister" method="post"> <input type="submit" value="REGISTER"></form>
-
+</center>
 </body>
 </html>

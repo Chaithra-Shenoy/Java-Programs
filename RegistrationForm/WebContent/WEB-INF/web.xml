@@ -60,6 +60,22 @@
     <servlet-name>Logout</servlet-name>
     <servlet-class>com.bridgelabz.Logout</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>PrePassword</servlet-name>
+    <url-pattern>/PrePassword</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PrePassword</servlet-name>
+    <servlet-class>com.bridgelabz.PrePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MailApp</servlet-name>
+    <url-pattern>/MailApp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MailApp</servlet-name>
+    <servlet-class>com.bridgelabz.MailApp</servlet-class>
+  </servlet>
   <filter-mapping>
     <filter-name>MyFilter</filter-name>
     <url-pattern>/LoginPage</url-pattern>
@@ -76,12 +92,12 @@
     <filter-name>RegFilter</filter-name>
     <filter-class>com.bridgelabz.RegFilter</filter-class>
   </filter>
-  <!-- <listener>
+  <listener>
     <listener-class>com.bridgelabz.MyListerner</listener-class>
   </listener>
   <listener>
     <listener-class>com.bridgelabz.Listener_Context</listener-class>
-  </listener> -->
+  </listener>
   <listener>
     <listener-class>com.bridgelabz.SessionListener</listener-class>
   </listener>

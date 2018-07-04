@@ -54,6 +54,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		if (i > 0) {
 			HttpSession session=req.getSession(true);
 			session.setAttribute("passEmail", email);
+			System.out.println(session.isNew());
 			RequestDispatcher dis=req.getRequestDispatcher("PreSuccess");
 			dis.forward(req, resp);	
 			}

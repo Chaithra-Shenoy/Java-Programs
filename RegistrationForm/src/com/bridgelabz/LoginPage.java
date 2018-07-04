@@ -55,12 +55,14 @@ public class LoginPage extends HttpServlet {
 				HttpSession session=req.getSession(true);
 				session.setMaxInactiveInterval(7*24*60*60);
 				session.setAttribute("passEmail", email);
+				System.out.println(session.isNew());
 				RequestDispatcher dis=req.getRequestDispatcher("PreSuccess");
 				dis.forward(req, resp);
 
 			} else {
 				HttpSession session=req.getSession(true);
 				session.setAttribute("passEmail", email);
+				System.out.println(session.isNew());
 				RequestDispatcher dis=req.getRequestDispatcher("PreError");
 				dis.forward(req, resp);
 				

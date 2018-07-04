@@ -13,5 +13,8 @@
       Password:<input type="password" name="pass" /><br>
       <input type="submit" value="LOGIN" /><br><br></pre>
 </form>
+<form action="PrePassword" method="post">
+<input type="submit" value="Forgot Password">
+</form>
 </body>
 </html>

@@ -4,13 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Invalid Password</title>
 </head>
+<style>
+body  {
+    background-color:pink;
+    border: solid;
+    margin: 5em;
+}
+</style>
 <body>
+<center>
 <form action="MailApp" method="post">
+<p> <h3>Please Enter Your Valid Email Id </h3> </p>
  To:<input type="text" name="to"  /><br/>
  <input type="submit" value="confirm">
-
+</center>
 </form>
 </body>
 </html>

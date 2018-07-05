@@ -6,9 +6,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>REGISTERATION PAGE</title>
 </head>
+<style>
+body  {
+    background-color:cyan;
+    border: solid;
+    margin: 5em;
+}
+</style>
 <body>
 <center><h3>REGISTERATION PAGE</h3></center>
 <form action="Register" method="post">
+<center>
 <pre>
      Name:<input type="text" name="name" /><br>
     Email:<input type="text" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9-\-\.]+)\.([a-zA-Z]{2,5})$" title="Follow abc@domain.com"/><br>
@@ -16,6 +24,7 @@
  Password:<input type="password" name="pass" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*].{8,})" title="Should contain atleast 1 uppercase,1 lowercase,1digit"/><br>
 <input type="submit" value="Register" /><br><br>
 </pre>
+</center>
 </form>
 </body>
 </html>

@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * purpose
+ * purpose test class to test required annotation.
  * 
  * @author Chaithra-Shenoy
  * @date

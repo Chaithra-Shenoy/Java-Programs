@@ -4,7 +4,7 @@
 package com.bridgelabz.Resource;
 
 /**
- * purpose
+ * purpose Train bean class
  * 
  * @author Chaithra-Shenoy
  * @date

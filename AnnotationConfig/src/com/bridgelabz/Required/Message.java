@@ -6,7 +6,7 @@ package com.bridgelabz.Required;
 import org.springframework.beans.factory.annotation.Required;
 
 /**
- * purpose
+ * purpose to describe required annotation for msg parameter.
  * 
  * @author Chaithra-Shenoy
  * @date

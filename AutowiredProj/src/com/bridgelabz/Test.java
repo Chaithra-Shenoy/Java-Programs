@@ -8,7 +8,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * purpose 
+ * purpose test class to test autowired ByName and ByClass
  *@author Chaithra-Shenoy
  *@date
  *@project_name

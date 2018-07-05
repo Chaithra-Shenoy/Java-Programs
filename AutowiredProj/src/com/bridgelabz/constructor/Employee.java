@@ -4,7 +4,7 @@
 package com.bridgelabz.constructor;
 
 /**
- * purpose
+ * purpose Autowired by constructor
  * 
  * @author Chaithra-Shenoy
  * @date
@@ -17,7 +17,9 @@ public class Employee {
 
 	private Pancard pancard;
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -25,22 +27,15 @@ public class Employee {
 		return "Employee [id=" + id + ", name=" + name + "]";
 	}
 
-	
-
-
-
-
 	/**
 	 * @param id
 	 * @param name
 	 */
-	public Employee(int id, String name,Pancard pan) {
+	public Employee(int id, String name, Pancard pan) {
 		this.id = id;
 		this.name = name;
-		this.pancard=pan;
+		this.pancard = pan;
 	}
-
-
 
 	/**
 	 * @return the id

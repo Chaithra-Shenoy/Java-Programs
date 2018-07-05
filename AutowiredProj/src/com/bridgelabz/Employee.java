@@ -4,7 +4,7 @@
 package com.bridgelabz;
 
 /**
- * purpose
+ * purpose Autowired byName
  * 
  * @author Chaithra-Shenoy
  * @date
@@ -14,7 +14,7 @@ package com.bridgelabz;
 public class Employee {
 	private int id;
 	private String name;
-	
+
 	private Pancard pancard;
 
 	/**
@@ -25,7 +25,8 @@ public class Employee {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -39,7 +40,8 @@ public class Employee {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -53,17 +55,21 @@ public class Employee {
 	}
 
 	/**
-	 * @param pancard the pancard to set
+	 * @param pancard
+	 *            the pancard to set
 	 */
 	public void setPancard(Pancard pancard) {
 		this.pancard = pancard;
 	}
+
 	public void getMsg() {
-		System.out.println("Employee details : \n Employee name:"+name+" Employee id :"+id);
+		System.out.println("Employee details : \n Employee name:" + name + " Employee id :" + id);
 	}
+
 	public void init() {
 		System.out.println("Bean lifecycle is initiated... WELCOME!");
 	}
+
 	public void destroy() {
 		System.out.println("Bean lifecycle destroyed... BYE!");
 	}

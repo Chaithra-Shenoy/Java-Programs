@@ -8,11 +8,11 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * purpose
+ * purpose Autowire Bysetters
  * 
  * @author Chaithra-Shenoy
  * @date
- * @project_name
+ * @project_name mainApp
  * 
  */
 public class mainApp {

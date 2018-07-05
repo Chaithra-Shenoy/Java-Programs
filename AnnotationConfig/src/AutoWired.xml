@@ -5,14 +5,14 @@
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-<context:annotation-config/>
-<bean id="demoBean" class="com.bridgelabz.AutoWired.DemoBean">
-<property name="id" value="4265554"></property>
-<property name="name" value="Chaithra"></property>
-</bean>
-<bean id="auto" class="com.bridgelabz.AutoWired.Auto">
-<property name="autoId" value="669455"></property>
-<property name="autoName" value="SRK"></property>
+	<context:annotation-config />
+	<bean id="demoBean" class="com.bridgelabz.AutoWired.DemoBean">
+		<property name="id" value="4265554"></property>
+		<property name="name" value="Chaithra"></property>
+	</bean>
+	<bean id="auto" class="com.bridgelabz.AutoWired.Auto">
+		<property name="autoId" value="669455"></property>
+		<property name="autoName" value="SRK"></property>
 
-</bean> 
+	</bean>
 </beans>

@@ -6,3 +6,5 @@
 4. Algorithms.
 5. Programs on Spring.
 6. Programs on Servlet and JDBC
+7. Programs on Design Patterns.
+8. Clinique management Program
